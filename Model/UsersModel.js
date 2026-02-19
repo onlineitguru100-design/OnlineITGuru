@@ -10,28 +10,7 @@ const usersSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    // name: {
-    //     type: String,
-    //     required: true, 
-    //     unique: true
-    // },
-    // mobile: {
-    //     type: String,
-    //     required: true,
-    //     unique: true
-    // },
-    // address: {
-    //     type: String,
-    //     default: null
-    // },
-    // pincode: {
-    //     type: String,
-    //     default: null
-    // },
-    // imageUrl: {
-    //     type: String,
-    //     default: ''
-    // }
+    
 }, { timestamps: true });
 
 
