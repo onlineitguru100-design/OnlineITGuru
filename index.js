@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 //const bodyParser = require('body-parser');
-const connectDB = require('./configs/mongooseDB');
+const connectDB = require('./Configs/MongooseDB');
 
 const usersRoutes = require('./Routes/UsersRoutes');
 // const categoryRoutes = require('./routes/categoryRoutes');
