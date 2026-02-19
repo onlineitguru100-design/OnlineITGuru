@@ -14,4 +14,3 @@ console.log('MongoDB connected...')
 }
 
 module.exports = connectDB;
-
