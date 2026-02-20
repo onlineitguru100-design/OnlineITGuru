@@ -9,6 +9,12 @@ exports.userRegister = async (req, res) => {
         const user = await usersService.registerUser({ email, password, name});
         res.status(201).json({ success: true, message: 'User Successfully Registered', user });
     } catch (error) {
+         if (error.code === 11000) {
+    return res.status(400).json({
+      success: false,
+      message: "UserName already registered"
+    });
+  }
         res.status(400).json({ success: false, error: error.message });
     }
 };
