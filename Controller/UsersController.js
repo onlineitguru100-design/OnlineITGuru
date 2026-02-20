@@ -5,8 +5,8 @@ const mongoose = require('mongoose')
 
 exports.userRegister = async (req, res) => {
     try {
-        const { email, password} = req.body;
-        const user = await usersService.registerUser({ email, password});
+        const { email, password, name} = req.body;
+        const user = await usersService.registerUser({ email, password, name});
         res.status(201).json({ success: true, message: 'User Successfully Registered', user });
     } catch (error) {
         res.status(400).json({ success: false, error: error.message });

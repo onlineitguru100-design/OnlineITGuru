@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt');
 
 
-exports.registerUser = async ({ email, password}) => {
+exports.registerUser = async ({ email, password, name}) => {
 
   // 1. Validate required fields
   if (!email || !password) {
@@ -23,7 +23,8 @@ exports.registerUser = async ({ email, password}) => {
   // 4. Create user
   const newUser = await usersModel.create({
     email,
-    password: hashedPassword
+    password: hashedPassword,
+    name: name
   });
 
   return newUser;
