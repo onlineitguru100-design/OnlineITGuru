@@ -14,7 +14,10 @@ const usersSchema = new mongoose.Schema({
         type: String,
         default: null
     },
-    
+    loginType: {
+        type: String,
+        required: true
+    },
 }, { timestamps: true });
 
 
