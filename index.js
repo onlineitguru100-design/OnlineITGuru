@@ -8,7 +8,7 @@ require('dotenv').config();
 const connectDB = require('./Configs/MongooseDB');
 
 const usersRoutes = require('./Routes/UsersRoutes');
-// const categoryRoutes = require('./routes/categoryRoutes');
+const categoryRoutes = require('./Routes/CategoriesRoutes');
 // const subCategoryRoutes = require('./routes/subCategoryRoutes');
 // const cartRoutes = require('./routes/cartRoutes');
 // const ordersRoutes = require('./routes/ordersRoutes');
@@ -33,8 +33,8 @@ connectDB();
 app.use(cors({ origin: "*" }));
 
 app.use(express.json())
-app.use('/users', usersRoutes)
-// app.use('/categories',categoryRoutes);
+app.use('/users', usersRoutes);
+app.use('/Categories',categoryRoutes);
 // app.use('/subCategories',subCategoryRoutes);
 // app.use('/Cart',cartRoutes);
 // app.use('/orders', ordersRoutes);
