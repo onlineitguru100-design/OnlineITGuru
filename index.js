@@ -9,7 +9,7 @@ const connectDB = require('./Configs/MongooseDB');
 
 const usersRoutes = require('./Routes/UsersRoutes');
 const categoryRoutes = require('./Routes/CategoriesRoutes');
-// const subCategoryRoutes = require('./routes/subCategoryRoutes');
+const exploreCoursesRoutesRoutes = require('./Routes/ExploreCoursesRoutes');
 // const cartRoutes = require('./routes/cartRoutes');
 // const ordersRoutes = require('./routes/ordersRoutes');
 // const homeRoutes = require('./routes/homeRoutes');
@@ -35,7 +35,7 @@ app.use(cors({ origin: "*" }));
 app.use(express.json())
 app.use('/api/users', usersRoutes);
 app.use('/api/Categories',categoryRoutes);
-// app.use('/subCategories',subCategoryRoutes);
+ app.use('/api/ExploreCourses',exploreCoursesRoutesRoutes);
 // app.use('/Cart',cartRoutes);
 // app.use('/orders', ordersRoutes);
 // app.use('/home',homeRoutes);
