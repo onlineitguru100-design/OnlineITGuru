@@ -33,8 +33,8 @@ connectDB();
 app.use(cors({ origin: "*" }));
 
 app.use(express.json())
-app.use('/users', usersRoutes);
-app.use('/Categories',categoryRoutes);
+app.use('/api/users', usersRoutes);
+app.use('/api/Categories',categoryRoutes);
 // app.use('/subCategories',subCategoryRoutes);
 // app.use('/Cart',cartRoutes);
 // app.use('/orders', ordersRoutes);

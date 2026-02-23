@@ -22,3 +22,11 @@ exports.createCategory = async (title, imageUrl) => {
   }
 
 }
+
+exports.getAllCategories = async () => {
+  try {
+    return await categoryModel.find()
+  } catch (error) {
+    throw new Error('Errr Fetchhing Categories:' + error.message)
+  }
+};

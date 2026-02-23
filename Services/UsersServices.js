@@ -45,3 +45,8 @@ exports.loginUser = async ({ email, password }) => {
   // 3. Return user 
   return user; 
 };
+
+exports.getUserById = async (userId) => {
+  if (!mongoose.isValidObjectId(userId)) return null;
+  return await usersModel.findById(userId, { password: 0 }).lean();
+};

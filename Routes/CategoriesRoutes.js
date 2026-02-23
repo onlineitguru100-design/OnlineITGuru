@@ -3,7 +3,7 @@ const router = express.Router();
 const categoryController = require('../Controller/CategoriesController')
 
 router.post("/Create",categoryController.createCategory)//,upload.single('image')
-// router.get('/', categoryController.getCategories);
+router.get('/', categoryController.getCategories);
 // router.get('/:id',categoryController.getCategoryById)
 // router.put("/:id",  categoryController.updateCategory);
 // router.get('/name/search',categoryController.getCategorieyByName)
