@@ -1,8 +1,5 @@
 const mongoose = require('mongoose');
 
-
-
-
 const exploreCoursesSchema = new mongoose.Schema({
 
   title: { type: String, default: "" },
