@@ -50,3 +50,11 @@ exports.getUserById = async (userId) => {
   if (!mongoose.isValidObjectId(userId)) return null;
   return await usersModel.findById(userId, { password: 0 }).lean();
 };
+
+
+exports.updateUserProfile = async (userId, updateData) => {
+  if (!mongoose.isValidObjectId(userId)) throw new Error('Invalid user ID');
+  const updatedUser = await usersModel.findByIdAndUpdate(userId, updateData, { new: true }).select('-password');
+  if (!updatedUser) throw new Error('User not found');
+  return updatedUser;
+};

@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const everyThingNeedController = require('../Controller/EveryThingNeedController')
+const sucessStoriesController = require('../Controller/SucessStoriesController')
 
-router.post("/Create",everyThingNeedController.create)//,upload.single('image')
-router.get('/EveryThingNeed', everyThingNeedController.getLatest);
+router.post("/Create",sucessStoriesController.createSucessStore)//,upload.single('image')
+router.get('/SucessStories', sucessStoriesController.getAllSucessStore);
 // router.get('/:id',categoryController.getCategoryById)
- router.put("update/:id",  everyThingNeedController.update);
-router.put('/add-feature/:id',everyThingNeedController.addFeature)
+ router.put("update/:id",  sucessStoriesController.updateSucessStore);
+
 // router.get('/search',categoryController.getCategoriesBySearch)
-// router.delete("/:id", categoryController.deleteCategory);
+ router.delete("/:id", sucessStoriesController.deleteSucessStore);
 
 // router.put("/:productId/updateQuantity", categoryController.updateUserQuantity );
 // router.get("/:productId/:userId", categoryController.getProductWithUserQuantity);

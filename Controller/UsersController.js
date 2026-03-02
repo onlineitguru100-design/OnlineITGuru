@@ -56,3 +56,27 @@ exports.getUserProfile = async (req, res) => {
 };
 
 
+exports.updateUserProfile = async (req, res) => {
+    try {
+        const { userId, email, password, name, loginType} = req.body;
+
+        if (!mongoose.isValidObjectId(userId)) {
+            return res.status(400).json({ success: false, error: "Invalid user ID" });
+        }
+
+        const updateData = {};
+        if (email) updateData.email = email;
+        if (password) updateData.password = password;
+        if (name) updateData.name = name;
+        if (loginType) updateData.loginType = loginType;
+       // if (imageUrl) updateData.imageUrl = imageUrl;
+
+        // ✅ Pass both userId and updateData
+        const updatedUser = await usersService.updateUserProfile(userId, updateData);
+
+        res.status(200).json({ success: true, message: 'Profile updated successfully', user: updatedUser });
+    } catch (error) {
+        res.status(500).json({ success: false, error: error.message });
+    }
+};
+
